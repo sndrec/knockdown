@@ -1,0 +1,74 @@
+-- how are we going to organize the play field? --
+playfield = {}
+playfield[1] = {}
+playfield[1].cursor = {}
+playfield[1].cursor["x"] = {}
+playfield[1].cursor["y"] = {}
+playfield[1] = {}
+playfield[1][1].blockType = 2 -- (what kind of block)
+playfield[1][1].state = 1 -- (state of the block)
+playfield[1][1].chainable = false -- (whether the block can continue a chain when it lands)
+playfield[1][1].timer = 0 -- (timer used for whatever current state the block is in)
+
+blockpos = ((y - 1) * 6) + x
+
+-- types: 1 2 3 4 5 6, 7 air, 8 garbage										--
+-- states: 
+-- 1 idle
+-- 2 swapping left
+-- 3 swapping right
+-- 4 about to fall
+-- 5 falling
+-- 6 pop flash
+-- 7 pop wait
+-- 8 pop
+-- chainable: is this block going to be a part of a chain when it lands					--
+
+game.settings = {}
+game.settings.blockFallTime = 6
+-- frames before a block will fall when over open ground
+game.settings.swapTime = 3
+-- frames it takes for a block to finish swapping
+game.settings.scrollSpeed = 0.1
+-- blocks per second to raise the board
+game.settings.popFrames = 10
+-- frames until the blocks in a popping group begin to pop
+game.settings.framesPerPop = 4
+-- frames between each individual block pop
+
+-- garbage base block --
+v.garbage = true
+-- width of garbage in blocks
+v.garbageWidth = 4
+
+-- garbage child block and position --
+v.garbageChild = {}
+v.garbageChild.x = 2
+v.garbageChild.y = 1
+-- reference to the parent of the garbage child
+v.garbageParent = garbageBase
+
+
+function GetBlock(fieldIndex, x, y)
+	return playField[fieldIndex][((y - 1) * 6) + x]
+end
+
+function GetBlockRealPos(x, y)
+	return ((y - 1) * 6) + x
+end
+
+function GetBlockXYFromRealPos(pos)
+	return Vector(pos % 6, math.floor(pos / 6) + 1, 0)
+end
+
+function GenerateNewBlock(pos, remove, blockType)
+
+end
+
+-- garbage.children
+-- garbage.width
+-- garbage.height
+
+-- garbage.parent
+-- tempBlock.garbagex
+-- tempBlock.garbagey

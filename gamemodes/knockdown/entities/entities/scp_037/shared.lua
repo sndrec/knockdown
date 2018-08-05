@@ -1,0 +1,9 @@
+ENT.Type = "anim"
+ENT.Base = "base_gmodentity"
+ENT.PrintName= "SCP 037"
+ENT.Author= "BENIS TEAM"
+ENT.Contact= "Benis"
+ENT.Purpose= "to benis"
+ENT.Instructions= "Use wisely."
+ENT.Spawnable = true
+ENT.AdminSpawnable = true

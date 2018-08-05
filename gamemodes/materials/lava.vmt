@@ -1,0 +1,28 @@
+"UnlitGeneric"
+{
+    "$basetexture" "lava"
+
+    "$angle" 0.0
+    "$translate" "[0.0 0.0]"
+    "$center" "[-0.5 -0.5]"
+    "$newscale" "[50 50]"
+
+    "Proxies"
+    {
+        "TextureScroll"
+        {
+            "textureScrollVar" "$translate"
+            "textureScrollRate" 0.25
+            "textureScrollAngle" 25
+        }
+
+        "TextureTransform"
+        {
+            "translateVar" "$translate"
+            "rotateVar" "$angle"
+            "centerVar" "$center"
+            "scaleVar" "$newscale"
+            "resultVar" "$basetexturetransform"
+        }
+    }
+}

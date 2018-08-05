@@ -1,0 +1,14 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "effects/comball/comball"
+	"$additive" 1
+   "Proxies"
+   {
+      "AnimatedTexture"
+      {
+         "animatedtexturevar" "$basetexture"
+         "animatedtextureframenumvar" "$frame"
+         "animatedtextureframerate" "12"
+      }
+   }
+}
